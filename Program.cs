@@ -13,6 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<IIncidentService, IncidentService>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy(name: "CorsPolicy", builder =>
