@@ -1,6 +1,8 @@
 using FluentValidation.AspNetCore;
 using FluentValidation;
 using TaskmanagementApi.Serversidevalidation;
+using TaskmanagementApi.ServiceLayer.IServices;
+using TaskmanagementApi.ServiceLayer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy(name: "CorsPolicy", builder =>

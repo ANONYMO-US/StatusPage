@@ -21,12 +21,24 @@ namespace TaskmanagementApi.Controllers
     {
         public ILoginService LoginService { get; set; }
 
-        public UsersController(ILoginService loginService) {
+        public UsersController(ILoginService loginService)
+        {
             LoginService = loginService;
         }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("createuser")]
         public GenericUser CreateUser()
         {
             return LoginService.CreateUser();
+        }
+
+        [HttpGet]
+        [Route("isuser")]
+        public bool IsUser()
+        {
+            return LoginService.IsUserPresent();
         }
     }
 }

@@ -9,9 +9,9 @@ namespace TaskmanagementApi.ServiceLayer.Services
         {
             return new GenericUser();
         }
-        public GenericUser IsUserPresent()
+        public bool IsUserPresent()
         {
-            return new GenericUser();
+            return true;
         }
     }
 }

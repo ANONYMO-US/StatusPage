@@ -24,6 +24,7 @@ namespace TaskmanagementApi
             });
             services.AddMvc().AddFluentValidation();
 
+            
             services.AddTransient<IValidator<DataLayer.Task>, TaskValidator>();
             services.AddScoped<ILoginService,LoginService>();
         }
