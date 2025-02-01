@@ -29,16 +29,16 @@ namespace TaskmanagementApi.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("createuser")]
-        public GenericUser CreateUser()
+        public GenericUser CreateUser(GenericUser user)
         {
-            return LoginService.CreateUser();
+            return LoginService.CreateUser(user);
         }
 
         [HttpGet]
         [Route("isuser")]
-        public bool IsUser()
+        public bool IsUser(int ServiceId)
         {
-            return LoginService.IsUserPresent();
+            return LoginService.IsUserPresent(ServiceId);
         }
     }
 }

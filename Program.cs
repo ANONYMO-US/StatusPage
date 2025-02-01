@@ -3,6 +3,8 @@ using FluentValidation;
 using TaskmanagementApi.Serversidevalidation;
 using TaskmanagementApi.ServiceLayer.IServices;
 using TaskmanagementApi.ServiceLayer.Services;
+using TaskmanagementApi.BusinessLayer.IRepository;
+using TaskmanagementApi.BusinessLayer.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IIncidentService, IncidentService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IIncidentsRepository, IncidentsRepository>();
+builder.Services.AddScoped<ICompanyServiceRepository, CompanyServiceRepository>();
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy(name: "CorsPolicy", builder =>

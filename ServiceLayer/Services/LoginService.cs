@@ -1,17 +1,23 @@
-﻿using TaskmanagementApi.DataLayer.Class.GenericClass;
+﻿using TaskmanagementApi.BusinessLayer.IRepository;
+using TaskmanagementApi.DataLayer.Class.GenericClass;
 using TaskmanagementApi.ServiceLayer.IServices;
 
 namespace TaskmanagementApi.ServiceLayer.Services
 {
     public class LoginService : ILoginService
     {
-        public GenericUser CreateUser()
+        public IUserRepository IUserRepository { get; set; }
+        public LoginService(IUserRepository userRepository)
         {
-            return new GenericUser();
+            IUserRepository = userRepository;
         }
-        public bool IsUserPresent()
+        public GenericUser CreateUser(GenericUser newUser)
         {
-            return true;
+            return IUserRepository.CreateUser(newUser);
+        }
+        public bool IsUserPresent(int UserId)
+        {
+            return IUserRepository.IsUserPresent(UserId);
         }
     }
 }
