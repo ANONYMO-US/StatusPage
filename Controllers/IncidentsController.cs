@@ -35,25 +35,32 @@ namespace TaskmanagementApi.Controllers
             return IncidentService.CreateIncident(NewIncident);
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("updateincident")]
-        public bool UpdateIncident(GenericIncidents Incident)
+        public bool UpdateIncident(Incidents Incident)
         {
             return IncidentService.UpdateIncident(Incident);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("resolveincident")]
-        public bool ResolveIncident(int Incidentid)
+        public bool ResolveIncident([FromBody]int Incidentid)
         {
             return IncidentService.ResolveIncident(Incidentid);
         }
 
-        [HttpGet]
-        [Route("associateincidentwithservice")]
-        public bool AssociateIncidentWithService(int Incidentid, int ServiceId)
+        [HttpPut]
+        [Route("associateincidentwithservice/{Incidentid}")]
+        public bool AssociateIncidentWithService(int Incidentid, [FromBody] int ServiceId)
         {
             return IncidentService.AssociateIncidentWithService(Incidentid,ServiceId);
+        }
+
+        [HttpGet]
+        [Route("getallincidents")]
+        public IEnumerable<Incidents> GetAllIncidents()
+        {
+            return IncidentService.GetAllIncidents();
         }
     }
 }

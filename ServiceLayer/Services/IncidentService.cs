@@ -16,9 +16,9 @@ namespace TaskmanagementApi.ServiceLayer.Services
         {
             return IIncidentsRepository.CreateIncident((Incidents)NewIncident);
         }
-        public bool UpdateIncident(GenericIncidents Incident)
+        public bool UpdateIncident(Incidents Incident)
         {
-            return IIncidentsRepository.UpdateIncident((Incidents)Incident);
+            return IIncidentsRepository.UpdateIncident(Incident);
         }
         public bool ResolveIncident(int Incidentid)
         {
@@ -27,6 +27,11 @@ namespace TaskmanagementApi.ServiceLayer.Services
         public bool AssociateIncidentWithService(int Incidentid, int ServiceId)
         {
             return IIncidentsRepository.AssociateIncidentWithService(Incidentid, ServiceId);
+        }
+
+        public IEnumerable<Incidents> GetAllIncidents()
+        {
+            return IIncidentsRepository.GetAllIncidents();
         }
     }
 }

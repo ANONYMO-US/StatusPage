@@ -57,5 +57,11 @@ namespace TaskmanagementApi.BusinessLayer.Repository
             _context.SaveChanges();
             return true;
         }
+
+        public IEnumerable<Incidents> GetAllIncidents()
+        {
+            var incidents = _context.ListofIncidents.OrderBy(b => b.IncidentId).ToList();
+            return incidents;
+        }
     }
 }

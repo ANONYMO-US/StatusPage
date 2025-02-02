@@ -9,5 +9,6 @@ namespace TaskmanagementApi.BusinessLayer.IRepository
         public bool UpdateIncident(Incidents Incident);
         public bool ResolveIncident(int Incidentid);
         public bool AssociateIncidentWithService(int Incidentid, int ServiceId);
+        public IEnumerable<Incidents> GetAllIncidents();
     }
 }
