@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using TaskmanagementApi.Serversidevalidation;
 using TaskmanagementApi.ServiceLayer.IServices;
 using TaskmanagementApi.ServiceLayer.Services;
 
@@ -25,7 +24,6 @@ namespace TaskmanagementApi
             services.AddMvc().AddFluentValidation();
 
             
-            services.AddTransient<IValidator<DataLayer.Task>, TaskValidator>();
             services.AddScoped<ILoginService,LoginService>();
         }
 
