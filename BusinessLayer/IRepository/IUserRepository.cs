@@ -1,10 +1,11 @@
-﻿using TaskmanagementApi.DataLayer.Class.GenericClass;
+﻿using TaskmanagementApi.DataLayer.Class;
+using TaskmanagementApi.DataLayer.Class.GenericClass;
 
 namespace TaskmanagementApi.BusinessLayer.IRepository
 {
     public interface IUserRepository
     {
-        public GenericUser CreateUser(GenericUser newUser);
+        public bool CreateUser(User newUser);
         public bool IsUserPresent(int userId);
     }
 }

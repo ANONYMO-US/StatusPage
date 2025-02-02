@@ -1,4 +1,5 @@
 ﻿using TaskmanagementApi.BusinessLayer.IRepository;
+using TaskmanagementApi.DataLayer.Class;
 using TaskmanagementApi.DataLayer.Class.GenericClass;
 using TaskmanagementApi.ServiceLayer.IServices;
 
@@ -11,15 +12,15 @@ namespace TaskmanagementApi.ServiceLayer.Services
         { 
             CompanyServiceRepository = companyServiceRepository;
         }
-        public bool CreateService(GenericCompanyServices CompanyService)
+        public bool CreateService(CompanyServices CompanyService)
         {
             return CompanyServiceRepository.CreateService(CompanyService);
         }
-        public IEnumerable<GenericCompanyServices> GetAllServices()
+        public IEnumerable<CompanyServices> GetAllServices()
         {
             return CompanyServiceRepository.GetAllServices();
         }
-        public bool UpdateService(GenericCompanyServices CompanyService)
+        public bool UpdateService(CompanyServices CompanyService)
         {
             return CompanyServiceRepository.UpdateService(CompanyService);
         }

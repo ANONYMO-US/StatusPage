@@ -1,4 +1,5 @@
 ﻿using TaskmanagementApi.BusinessLayer.IRepository;
+using TaskmanagementApi.DataLayer.Class;
 using TaskmanagementApi.DataLayer.Class.GenericClass;
 using TaskmanagementApi.ServiceLayer.IServices;
 
@@ -11,7 +12,7 @@ namespace TaskmanagementApi.ServiceLayer.Services
         {
             IUserRepository = userRepository;
         }
-        public GenericUser CreateUser(GenericUser newUser)
+        public bool CreateUser(User newUser)
         {
             return IUserRepository.CreateUser(newUser);
         }

@@ -1,4 +1,5 @@
 ﻿using TaskmanagementApi.BusinessLayer.IRepository;
+using TaskmanagementApi.DataLayer.Class;
 using TaskmanagementApi.DataLayer.Class.GenericClass;
 using TaskmanagementApi.ServiceLayer.IServices;
 
@@ -13,11 +14,11 @@ namespace TaskmanagementApi.ServiceLayer.Services
         }
         public GenericIncidents CreateIncident(GenericIncidents NewIncident)
         {
-            return IIncidentsRepository.CreateIncident(NewIncident);
+            return IIncidentsRepository.CreateIncident((Incidents)NewIncident);
         }
         public bool UpdateIncident(GenericIncidents Incident)
         {
-            return IIncidentsRepository.UpdateIncident(Incident);
+            return IIncidentsRepository.UpdateIncident((Incidents)Incident);
         }
         public bool ResolveIncident(int Incidentid)
         {

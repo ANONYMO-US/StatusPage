@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using TaskmanagementApi.DataLayer.Class;
 using TaskmanagementApi.DataLayer.Class.GenericClass;
 using TaskmanagementApi.DataLayer.DataBaseContexts;
@@ -29,8 +30,13 @@ namespace TaskmanagementApi.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("createincident")]
-        public GenericIncidents CreateIncident(GenericIncidents NewIncident)
+        public GenericIncidents CreateIncident([FromBody] Incidents NewIncident)
         {
+            Incidents n = new Incidents();
+            n.ServiceId = 1;
+            n.IncidentId = 2;
+            n.IncidentStatus = "tes";
+            string jsonPayload = JsonConvert.SerializeObject(n);
             return IncidentService.CreateIncident(NewIncident);
         }
 

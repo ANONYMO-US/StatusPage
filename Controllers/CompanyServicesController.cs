@@ -29,21 +29,21 @@ namespace TaskmanagementApi.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("createservice")]
-        public bool CreateServices(GenericCompanyServices companyService)
+        public bool CreateServices(CompanyServices companyService)
         {
             return CompanyService.CreateService(companyService);
         }
 
         [HttpGet]
         [Route("getallservices")]
-        public IEnumerable<GenericCompanyServices> GetAllServices()
+        public IEnumerable<CompanyServices> GetAllServices()
         {
             return CompanyService.GetAllServices();
         }
 
         [HttpGet]
         [Route("updateservice")]
-        public bool UpdateService(GenericCompanyServices companyService)
+        public bool UpdateService(CompanyServices companyService)
         {
             return CompanyService.UpdateService(companyService);
         }
