@@ -41,18 +41,18 @@ namespace TaskmanagementApi.Controllers
             return CompanyService.GetAllServices();
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("updateservice")]
         public bool UpdateService(CompanyServices companyService)
         {
             return CompanyService.UpdateService(companyService);
         }
 
-        [HttpGet]
-        [Route("deleteservice")]
-        public bool DeleteService(int ServiceId)
+        [HttpDelete]
+        [Route("deleteservice/{serviceId}")]
+        public bool DeleteService(int serviceId)
         {
-            return CompanyService.DeleteService(ServiceId);
+            return CompanyService.DeleteService(serviceId);
         }
     }
 }

@@ -23,6 +23,7 @@ namespace TaskmanagementApi.BusinessLayer.Repository
                 {
                     incident.ServiceId = Incident.ServiceId;
                     incident.IncidentStatus = Incident.IncidentStatus;
+                    incident.IncidentDescription = Incident.IncidentDescription;
                     break;
                 }
             }

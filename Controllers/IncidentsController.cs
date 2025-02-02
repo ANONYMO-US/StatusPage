@@ -32,11 +32,6 @@ namespace TaskmanagementApi.Controllers
         [Route("createincident")]
         public GenericIncidents CreateIncident([FromBody] Incidents NewIncident)
         {
-            Incidents n = new Incidents();
-            n.ServiceId = 1;
-            n.IncidentId = 2;
-            n.IncidentStatus = "tes";
-            string jsonPayload = JsonConvert.SerializeObject(n);
             return IncidentService.CreateIncident(NewIncident);
         }
 

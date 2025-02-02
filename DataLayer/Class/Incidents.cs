@@ -10,6 +10,7 @@ namespace TaskmanagementApi.DataLayer.Class
         public int IncidentId { get; set; }
         public int ServiceId { get; set; }
         public string IncidentStatus { get; set; }
+        public string IncidentDescription { get; set; }
 
     }
 }
